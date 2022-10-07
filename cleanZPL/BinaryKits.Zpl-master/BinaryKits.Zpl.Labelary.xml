@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BinaryKits.Zpl.Labelary</name>
+    </assembly>
+    <members>
+        <member name="F:BinaryKits.Zpl.Labelary.Measure.Millimeter">
+            <summary>
+            Millimeter
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Labelary.Measure.Inch">
+            <summary>
+            Inch
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Labelary.PrintDensity">
+            <summary>
+            The desired print density, in dots per millimeter
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Labelary.PrintDensity.PD6dpmm">
+            <summary>
+            152 dpi
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Labelary.PrintDensity.PD8dpmm">
+            <summary>
+            203 dpi
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Labelary.PrintDensity.PD12dpmm">
+            <summary>
+            300 dpi
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Labelary.PrintDensity.PD24dpmm">
+            <summary>
+            600 dpi
+            </summary>
+        </member>
+    </members>
+</doc>

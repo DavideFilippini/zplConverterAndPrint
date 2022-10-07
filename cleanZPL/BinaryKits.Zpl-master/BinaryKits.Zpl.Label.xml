@@ -1,0 +1,771 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BinaryKits.Zpl.Label</name>
+    </assembly>
+    <members>
+        <member name="T:BinaryKits.Zpl.Label.Elements.IFormatElement">
+            <summary>
+            Implemented by elements allowing their content to be set
+            when merging formats (templating).
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.IFormatElement.SetTemplateContent(System.String)">
+            <summary>
+            Sets element's content (text, bar code value...).
+            </summary>
+            <param name="content">String content</param>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.Elements.ZplBarcode.ModuleWidth">
+            <summary>
+            Module width (in dots)
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcode.SetTemplateContent(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplBarcode128">
+            <summary>
+            Code 128 Barcode
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcode128.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,BinaryKits.Zpl.Label.FieldOrientation,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Code 128 Barcode
+            </summary>
+            <param name="content"></param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="height"></param>
+            <param name="moduleWidth"></param>
+            <param name="wideBarToNarrowBarWidthRatio"></param>
+            <param name="fieldOrientation"></param>
+            <param name="printInterpretationLine"></param>
+            <param name="printInterpretationLineAboveCode"></param>
+            <param name="bottomToTop"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcode128.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplBarcode39">
+            <summary>
+            Code 39 Barcode
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcode39.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,BinaryKits.Zpl.Label.FieldOrientation,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Code 39 Barcode
+            </summary>
+            <param name="content"></param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="height"></param>
+            <param name="moduleWidth"></param>
+            <param name="wideBarToNarrowBarWidthRatio"></param>
+            <param name="fieldOrientation"></param>
+            <param name="printInterpretationLine"></param>
+            <param name="printInterpretationLineAboveCode"></param>
+            <param name="mod43CheckDigit"></param>
+            <param name="bottomToTop"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcode39.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplBarcodeAnsiCodabar">
+            <summary>
+            Ansi Codabar Barcode
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcodeAnsiCodabar.#ctor(System.String,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,BinaryKits.Zpl.Label.FieldOrientation,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Ansi Codabar Barcode
+            </summary>
+            <param name="content"></param>
+            <param name="startCharacter">A,B,C,D</param>
+            <param name="stopCharacter">A,B,C,D</param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="height"></param>
+            <param name="moduleWidth"></param>
+            <param name="wideBarToNarrowBarWidthRatio"></param>
+            <param name="fieldOrientation"></param>
+            <param name="printInterpretationLine"></param>
+            <param name="printInterpretationLineAboveCode"></param>
+            <param name="checkDigit"></param>
+            <param name="bottomToTop"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcodeAnsiCodabar.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplBarcodeEan13">
+            <summary>
+            EAN-13 Barcode
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcodeEan13.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,BinaryKits.Zpl.Label.FieldOrientation,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            EAN-13 Barcode
+            </summary>
+            <param name="content"></param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="height"></param>
+            <param name="moduleWidth"></param>
+            <param name="wideBarToNarrowBarWidthRatio"></param>
+            <param name="fieldOrientation"></param>
+            <param name="printInterpretationLine"></param>
+            <param name="printInterpretationLineAboveCode"></param>
+            <param name="bottomToTop"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcodeEan13.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplBarcodeInterleaved2of5">
+            <summary>
+            Interleaved 2 of 5 Barcode 
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcodeInterleaved2of5.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,BinaryKits.Zpl.Label.FieldOrientation,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Interleaved 2 of 5 Barcode 
+            </summary>
+            <param name="content"></param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="height"></param>
+            <param name="moduleWidth"></param>
+            <param name="wideBarToNarrowBarWidthRatio"></param>
+            <param name="fieldOrientation"></param>
+            <param name="printInterpretationLine"></param>
+            <param name="printInterpretationLineAboveCode"></param>
+            <param name="mod10CheckDigit"></param>
+            <param name="bottomToTop"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplBarcodeInterleaved2of5.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplDataMatrix">
+            <summary>
+            Data Matrix Bar Code, ^BXo,h,s,c,r,f,g,a
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplDataMatrix.#ctor(System.String,System.Int32,System.Int32,System.Int32,BinaryKits.Zpl.Label.FieldOrientation,System.Boolean)">
+            <summary>
+            Data Matrix Bar Code
+            </summary>
+            <param name="content"></param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="height"></param>
+            <param name="fieldOrientation"></param>
+            <param name="bottomToTop"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplDataMatrix.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplDataMatrix.SetTemplateContent(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.Elements.ZplDownload.StorageDevice">
+            <summary>
+            DRAM, Memory Card, EPROM, Flash
+            R, E, B, and A
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplDownloadGraphics">
+            <summary>
+            Download Graphics<br/>
+            The ~DG command downloads an ASCII Hex representation of a graphic image.
+            If .GRF is not the specified file extension, .GRF is automatically appended.
+            </summary>
+            <remarks>
+            Format:~DGd:o.x,t,w,data
+            d = device to store image
+            o = image name
+            x = extension
+            t = total number of bytes in graphic
+            w = number of bytes per row
+            data = ASCII hexadecimal string defining image
+            </remarks>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplDownloadGraphics.#ctor(System.Char,System.String,System.Byte[],System.Boolean,BinaryKits.Zpl.Label.ImageConverters.IImageConverter)">
+            <summary>
+            Zpl Download Graphics
+            </summary>
+            <param name="storageDevice"></param>
+            <param name="imageName"></param>
+            <param name="imageData"></param>
+            <param name="isCompressionActive"></param>
+            <param name="imageConverter"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplDownloadGraphics.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplDownloadObjects">
+            <summary>
+            Download Graphics / Native TrueType or OpenType Font
+            The ~DY command downloads to the printer graphic objects or fonts in any supported format.
+            This command can be used in place of ~DG for more saving and loading options.
+            ~DY is the preferred command to download TrueType fonts on printers with firmware greater than X.13.
+            It is faster than ~DU.
+            </summary>
+            <remarks>
+            Format:~DYd:f,b,x,t,w,data
+            d = file location
+            f = file name
+            b = format downloaded in data field
+            x = extension of stored file
+            t = total number of bytes in file
+            w = total number of bytes per row
+            data = data
+            </remarks>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplDownloadObjects.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.Elements.ZplElementBase.IsEnabled">
+            <summary>
+            Indicate the rendering process whether this elemenet can be skipped
+            </summary>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.Elements.ZplElementBase.Id">
+            <summary>
+            Optionally identify the element for future lookup/manipulation
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplElementBase.Render">
+            <summary>
+            Render Zpl data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplElementBase.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <summary>
+            Render Zpl data
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldBlock.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplFieldNumber">
+            <summary>
+            Field number element as declared in formats (templates).
+            </summary>
+            <see cref="T:BinaryKits.Zpl.Label.Elements.ZplRecallFieldNumber"/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldNumber.#ctor(System.Int32,BinaryKits.Zpl.Label.Elements.ZplElementBase)">
+            <summary>
+            Field number with format element (without data).
+            </summary>
+            <param name="number">Field number from 0 to 9999</param>
+            <param name="formatElement">Element providing location, font</param>
+            <exception cref="T:System.ArgumentException">If element is not an <see cref="T:BinaryKits.Zpl.Label.Elements.IFormatElement"/>
+            (allowing it's data to be set when merging formats)</exception>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplFieldOrigin">
+            <summary>
+            Field Origin<br/>
+            The ^FO command sets a field origin, relative to the label home (^LH) position.
+            ^FO sets the upper-left corner of the field area by defining points along the x-axis and y-axis independent of the rotation.
+            </summary>
+            <remarks>
+            Format:^FOx,y
+            </remarks>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldOrigin.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Field Origin
+            </summary>
+            <param name="positionX">X Position (0-32000)</param>
+            <param name="positionY">Y Position (0-32000)</param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldOrigin.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldOrigin.Offset(System.Int32,System.Int32)">
+            <summary>
+            Return a new instance with offset applied
+            </summary>
+            <param name="offsetX">Offset on x</param>
+            <param name="offsetY">Offset on y</param>
+            <returns></returns>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplFieldTypeset">
+            <summary>
+            Field Typeset<br/>
+            The ^FT command sets the field position, relative to the home position of the label designated by the ^LH
+            command.The typesetting origin of the field is fixed with respect to the contents of the field and does not
+            change with rotation.
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldTypeset.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Field Typeset
+            </summary>
+            <param name="positionX">X Position (0-32000)</param>
+            <param name="positionY">Y Position (0-32000)</param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldTypeset.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFieldTypeset.Offset(System.Int32,System.Int32)">
+            <summary>
+            Return a new instance with offset applied
+            </summary>
+            <param name="offsetX">Offset on x</param>
+            <param name="offsetY">Offset on y</param>
+            <returns></returns>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplFont">
+            <summary>
+            ^A – Scalable/Bitmapped Font
+            </summary>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.Elements.ZplFont.FontName">
+            <summary>
+            Any font in the printer (downloaded, EPROM, stored fonts, fonts A through Z and 0 to 9).
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFont.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplFontIdentifier">
+            <summary>
+            All built-in fonts are referenced using a one-character identifier. The ^CW command assigns a single
+            alphanumeric character to a font stored in DRAM, memory card, EPROM, or Flash
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFontIdentifier.#ctor(System.Char,System.String,System.String)">
+            <summary>
+            All built-in fonts are referenced using a one-character identifier. The ^CW command assigns a single
+            alphanumeric character to a font stored in DRAM, memory card, EPROM, or Flash
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplFontIdentifier.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplGraphicBox.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplGraphicCircle">
+            <summary>
+            Graphic Circle<br/>
+            The ^GC command produces a circle on the printed label.
+            The command parameters specify the diameter(width) of the circle, outline thickness, and color.
+            Thickness extends inward from the outline.
+            </summary>
+            <remarks>
+            Format:^GCd,t,c
+            d = circle diameter
+            t = border thickness
+            c = line color
+            </remarks>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplGraphicCircle.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplGraphicDiagonalLine.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.Elements.ZplGraphicElement.LineColor">
+            <summary>
+            Line color
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplGraphicEllipse.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplGraphicField">
+            <summary>
+            Graphic Field - ^GF
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplGraphicField.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <summary>
+            Render (^GFa,b,c,d,data)
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplGraphicSymbol.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplImageMove">
+            <summary>
+            Image Move<br/>
+            *The* ^IM command performs a direct move of an image from storage area into the bitmap.
+            The command is identical to the ^XG command (Recall Graphic), except there are no sizing parameters
+            </summary>
+            <remarks>
+            Format:^IMd:o.x<br/>
+            d = location of stored object<br/>
+            o = object name<br/>
+            x = extension<br/>
+            </remarks>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplImageMove.#ctor(System.Int32,System.Int32,System.Char,System.String,System.String)">
+            <summary>
+            Image Move
+            </summary>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="storageDevice"></param>
+            <param name="objectName"></param>
+            <param name="extension"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplImageMove.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplPositionedElementBase.#ctor(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            ZplPositionedElementBase
+            </summary>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="bottomToTop">Use FieldTypeset</param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplQrCode.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,BinaryKits.Zpl.Label.ErrorCorrectionLevel,System.Int32)">
+            <summary>
+            Zpl QrCode
+            </summary>
+            <param name="content"></param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="model">1 (original) and 2 (enhanced – recommended)</param>
+            <param name="magnificationFactor">Size of the QR code, 1 on 150 dpi printers, 2 on 200 dpi printers, 3 on 300 dpi printers, 6 on 600 dpi printers</param>
+            <param name="errorCorrectionLevel"></param>
+            <param name="maskValue">0-7, (default: 7)</param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplQrCode.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplQrCode.SetTemplateContent(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplRaw.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplRecallFieldNumber">
+            <summary>
+            Field number element proving value to a <see cref="T:BinaryKits.Zpl.Label.Elements.ZplFieldNumber"/>.
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplRecallGraphic">
+            <summary>
+            ^XGd:o.x,mx,my
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplRecallGraphic.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplReferenceGrid.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplSingleLineFieldBlock">
+            <summary>
+            Similar to ZplTextField with big line spacing, so only the first line is visible
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Elements.ZplTextBlock">
+            <summary>
+            The ^TB command prints a text block with defined width and height.
+            The text block has an automatic word-wrap function. 
+            If the text exceeds the block height, the text is truncated. Does not support \n
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplTextBlock.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplTextField.#ctor(System.String,System.Int32,System.Int32,BinaryKits.Zpl.Label.Elements.ZplFont,BinaryKits.Zpl.Label.NewLineConversionMethod,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Construct a ^FD (Field Data) element, together with the ^FO, ^A and ^FH.
+            Control character will be handled (Convert to Hex or replace with ' ')
+            </summary>
+            <param name="text">Original text content</param>
+            <param name="positionX"></param>
+            <param name="positionY"></param>
+            <param name="font"></param>
+            <param name="newLineConversion"></param>
+            <param name="useHexadecimalIndicator"></param>
+            <param name="reversePrint"></param>
+            <param name="bottomToTop"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplTextField.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Elements.ZplTextField.SetTemplateContent(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.ErrorCorrectionLevel">
+            <summary>
+            QR-Code - Error Correction Level 
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.ErrorCorrectionLevel.UltraHighReliability">
+            <summary>
+            Ultra-high reliability level
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.ErrorCorrectionLevel.HighReliability">
+            <summary>
+            High reliability level
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.ErrorCorrectionLevel.Standard">
+            <summary>
+            Standard level
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.ErrorCorrectionLevel.HighDensity">
+            <summary>
+            High density
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.FieldOrientation">
+            <summary>
+            Field Orientation
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.FieldOrientation.Normal">
+            <summary>
+            Normal
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.FieldOrientation.Rotated90">
+            <summary>
+            Rotated 90 degrees (clockwise)
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.FieldOrientation.Rotated180">
+            <summary>
+            Inverted 180 degrees
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.FieldOrientation.Rotated270">
+            <summary>
+            Read from bottom up, 270 degrees
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.GraphicSymbolCharacter">
+            <summary>
+            Graphic Symbol Character
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.GraphicSymbolCharacter.RegisteredTradeMark">
+            <summary>
+            Registered Trade Mark
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.GraphicSymbolCharacter.Copyright">
+            <summary>
+            Copyright
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.GraphicSymbolCharacter.TradeMark">
+            <summary>
+            Trade Mark
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.GraphicSymbolCharacter.UnderwritersLaboratoriesApproval">
+            <summary>
+            Underwriters Laboratories Approval
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.GraphicSymbolCharacter.CanadianStandardsAssociationApproval">
+            <summary>
+            Canadian Standards Association Approval
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.Helpers.ZebraHexCompressionHelper">
+            <summary>
+            Alternative Data Compression Scheme for ~DG and ~DB Commands
+            There is an alternative data compression scheme recognized by the Zebra printer. This scheme further
+            reduces the actual number of data bytes and the amount of time required to download graphic images and
+            bitmapped fonts with the ~DG and ~DB commands
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.Helpers.ZebraHexCompressionHelper.MinCompressionBlockCount">
+            <summary>
+            MinCompressionBlockCount (CompressionCountMapping -> g)
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.Helpers.ZebraHexCompressionHelper.MaxCompressionRepeatCount">
+            <summary>
+            CompressionCountMapping (CompressionCountMapping -> z)
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.Helpers.ZebraHexCompressionHelper.CompressionCountMapping">
+            <summary>
+            The mapping table used for compression.
+            Each character count (the key) is represented by a certain char (the value).
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Helpers.ZebraHexCompressionHelper.Compress(System.String,System.Int32)">
+            <summary>
+            Compress hex
+            </summary>
+            <param name="hexData">Clean hex data 000000\nFFFFFF</param>
+            <param name="bytesPerRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.Helpers.ZebraHexCompressionHelper.Uncompress(System.String,System.Int32)">
+            <summary>
+            Uncompress data
+            </summary>
+            <param name="compressedHexData"></param>
+            <param name="bytesPerRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.ImageConverters.ImageSharpImageConverter.ConvertImage(System.Byte[])">
+            <summary>
+            Convert image to bitonal image (grf)
+            </summary>
+            <param name="imageData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.ImageConverters.ImageSharpImageConverter.ConvertImage(System.Byte[],System.Int32)">
+            <summary>
+            Convert from bitonal image (grf) to png image
+            </summary>
+            <param name="imageData"></param>
+            <param name="bytesPerRow"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.LineColor">
+            <summary>
+            Line Color
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.LineColor.Black">
+            <summary>
+            Black
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.LineColor.White">
+            <summary>
+            White
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.NewLineConversionMethod">
+            <summary>
+            NewLine Conversion Method
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.NewLineConversionMethod.ToSpace">
+            <summary>
+            To Space
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.NewLineConversionMethod.ToEmpty">
+            <summary>
+            To Empty
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.NewLineConversionMethod.ToZplNewLine">
+            <summary>
+            To Zpl NewLine
+            </summary>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.TextJustification">
+            <summary>
+            Text Justification
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.TextJustification.Left">
+            <summary>
+            Left
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.TextJustification.Center">
+            <summary>
+            Center
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.TextJustification.Right">
+            <summary>
+            Right
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.TextJustification.Justified">
+            <summary>
+            Justified
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.ZplConstants.InternationalFontEncoding.CI28">
+            <summary>
+            Unicode (UTF-8 encoding) - Unicode Character Set
+            </summary>
+        </member>
+        <member name="F:BinaryKits.Zpl.Label.ZplConstants.InternationalFontEncoding.CI13">
+            <summary>
+            13 = Zebra Code Page 850 (see page 1194)
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.ZplEngine.#ctor">
+            <summary>
+            Start an empty engine
+            </summary>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.ZplEngine.#ctor(System.Collections.Generic.IEnumerable{BinaryKits.Zpl.Label.Elements.ZplElementBase})">
+            <summary>
+            Start an engine with given elements
+            </summary>
+            <param name="elements">Zpl elements to be added</param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.ZplEngine.Render(BinaryKits.Zpl.Label.ZplRenderOptions)">
+            <summary>
+            Output the Zpl string using given context
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.ZplEngine.AddRawZplCode(System.String)">
+            <summary>
+            Add raw Zpl fragment
+            </summary>
+            <param name="rawZplCode"></param>
+        </member>
+        <member name="M:BinaryKits.Zpl.Label.ZplEngine.MapToHexadecimalValue(System.Char)">
+            <summary>
+            Convert a char to be Hex value, 2 letters
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BinaryKits.Zpl.Label.ZplRenderOptions">
+            <summary>
+            Holding rendering settings
+            </summary>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.ZplRenderOptions.AddStartEndFormat">
+            <summary>
+            Include ^XA and ^XZ
+            </summary>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.ZplRenderOptions.AddDefaultLabelHome">
+            <summary>
+            Include ^LH0,0
+            </summary>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.ZplRenderOptions.ChangeInternationalFontEncoding">
+            <summary>
+            ^CI
+            </summary>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.ZplRenderOptions.SourcePrintDpi">
+            <summary>
+            SourcePrint DPI
+            </summary>
+            <remarks>Default: 203</remarks>
+        </member>
+        <member name="P:BinaryKits.Zpl.Label.ZplRenderOptions.TargetPrintDpi">
+            <summary>
+            TargetPrint DPI
+            </summary>
+            <remarks>Default: 203</remarks>
+        </member>
+    </members>
+</doc>
