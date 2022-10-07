@@ -20,25 +20,21 @@ namespace BinaryKits.Zpl.TestConsole
         static async Task Main(string[] args)
 #pragma warning restore CS1998 // In questo metodo asincrono non sono presenti operatori 'await', pertanto verrà eseguito in modo sincrono. Provare a usare l'operatore 'await' per attendere chiamate ad API non di blocco oppure 'await Task.Run(...)' per effettuare elaborazioni basate sulla CPU in un thread in background.
         {
-            //args[0] = "@\"C:\\Users\\david\\Downloads\\test_base64.txt";
-            //string uploadText = System.IO.File.ReadAllText(args[0]);
-            string savePAth = "C:\\\\Users\\\\david\\\\Downloads\\";
+            string uploadText = System.IO.File.ReadAllText(args[0]);
+            string savePAth = "";
             if (args.Length > 1) savePAth = args[1] + "//";
             var printerName = "Badgy200";
-            var printerName = "Microsoft Print to PDF";
+            //var printerName = "Microsoft Print to PDF";
             if (args.Length > 2) printerName = args[2];
 
-
             //start "title" zplToImage.exe C:\\Users\\david\\Downloads\\test_img_convertite_noz64.txt C:\\Users\\david\\Downloads\
-            string uploadText = System.IO.File.ReadAllText("C:\\\\Users\\\\david\\\\Downloads\\\\test_img_convertite_noz64_2.txt");
             var fileToPrint = await renderbasicAsync(uploadText, savePAth);
             printFile(fileToPrint, printerName, uploadText);
         }
 
         static string printFile(string pathImage, string printerName, string uploadText)
         {
-            // initialize PrintDocument object
-            PrintDocument doc = new PrintDocument()
+            PrintDocument pd = new PrintDocument()
             {
                 PrinterSettings = new PrinterSettings()
                 {
@@ -49,33 +45,16 @@ namespace BinaryKits.Zpl.TestConsole
                     PrintToFile = false,
 
                     // set the filename to whatever you like (full path)
-                    PrintFileName = pathImage,
+                    //PrintFileName = pathImage,
                 }
             };
 
-            doc.Print();
-
-
-            //StreamReader streamToPrint = new StreamReader(@"C:\Users\david\Downloads\zplToImageResult.png");
-
-            //PrintDocument pd = new PrintDocument();
-            ////pd.PrintPage += new PrintPageEventHandler
-            ////   (this.pd_PrintPage);
-            //pd.Print();
-
-            //streamToPrint.Close();
-
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += (sender, args) =>
-            {
-                Image i = Image.FromFile(@"C:\Users\david\Downloads\zplToImageResult.png");
+            pd.PrintPage += (sender, args) => {
+                Image i = Image.FromFile(pathImage);
                 args.Graphics.DrawImage(i, args.PageBounds);
 
             };
             pd.Print();
-
-
-
             return "";
         }
 
@@ -99,7 +78,6 @@ namespace BinaryKits.Zpl.TestConsole
             };
 
             var pathImage = @"" + savePAth + "zplToImageResult.png";
-            var path2 = @"C:\Users\david\OneDrive\Desktop\aaa.pdf";
 
             IPrinterStorage printerStorage = new PrinterStorage();
             var drawer = new ZplElementDrawer(printerStorage, drawOptions);
@@ -120,7 +98,7 @@ namespace BinaryKits.Zpl.TestConsole
             //return SendFileToPrinter("NPI05D626 (HP Color LaserJet MFP M281fdw)", pathImage).ToString();
 
 
-            return path2;
+            return pathImage;
 
         }
 
@@ -247,16 +225,8 @@ namespace BinaryKits.Zpl.TestConsole
 
 
 
-
             //ZplElementBase[] elements = { new ZplRaw(zplData) };
-
-
-
-
             //var renderEngine = new ZplEngine(elements);
-
-
-
             //IPrinterStorage printerStorage = new PrinterStorage();
             //var drawer = new ZplElementDrawer(printerStorage);
 
